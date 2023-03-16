@@ -1,24 +1,45 @@
-问题：
-- DQN在小数据集上快速收敛----BCQ实现有问题
-- reward.cumsum()的使用
-- offline rl方面离散问题并不是很难处理？
+Question:
+
+- DQN Fast convergence on small data sets ----BCQ implementation has problems
+
+- Use of reward.cumsum()
+
+- offline rl discrete problem is not difficult to deal with?
+
+
 
 TODO:
-- 收集训练过程中的loss变化(完成)
-- log名自动反映实验设置
-- 需要统计每个回合累计奖励情况
-- 使用hydra
-- 理解多线程收集数据代码
+
+- Collect loss changes during training (complete)
+
+- The log name automatically reflects the experiment Settings
+
+- Need to count the cumulative rewards per turn
+
+- Use hydra
+
+- Understand multithreaded data collection code
 
 
-观察到的现象：
-- env不加seed, 每次求解情况不一样；根据SB score选分数和Configure不完全一样
 
-数据集目录: "/home/chengpeng/chengpeng_BCQ_co/chengpeng_BCQ_co/data_generation"
-- buffers_100:  LP迭代次数作为reward，100个数据，一般用于测试代码是否可行；
-- buffers_100300: LP迭代次数作为reward,100300个数据；
-- nodebuffers_10000：node作为reward，1W个数据；
-- timebuffers_10000: solvingtime作为reward，1W个数据；
-- nodemixedbuffers_10000: node作为reward，50%的专家数据，50%的弱专家数据，1W个数据；
 
-https://shimo.im/sheets/QPtQtjYrYtpdrWPg/MODOC
+
+The observed phenomenon:
+
+- env does not use seed, so it is run differently each time. Choosing a score based on SB score is not exactly the same as Configure
+
+
+
+Data set directory: "/ home/chengpeng/chengpeng_BCQ_co/chengpeng_BCQ_co/data_generation"
+
+- buffers_100: LP iteration number as reward, 100 data, generally used to test whether the code is feasible;
+
+- buffers_100300: LP iteration times as reward, 100,300 data;
+
+- nodebuffers_10000: node as reward, 1W data.
+
+- timebuffers_10000: solvingtime as reward, 1W data;
+
+- nodemixedbuffers_10000: node as reward, 50% expert data, 50% weak expert data, 1W data;
+
+ 
